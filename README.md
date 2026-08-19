@@ -2,7 +2,8 @@
 Includes OSM tracks and certain other transit elements and additional fields not present in NIMBY Rails 1.19 base map
 
 Files included:
-- World and regions (Americas, Eurasia, Africa-Oceania) pmtiles files
+- World and regions (Americas, Eurasia, Africa-Oceania) pmtiles files that add selected OSM objects and certain attributes, mostly tracks and related.
+    These are intended to supplement and not replace the objects included under the standard OMT schema.
 - Schema file rail-supplement.yml. When using, change local source as relevant.
 
 # Licenses
