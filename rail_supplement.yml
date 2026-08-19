@@ -1,0 +1,335 @@
+schema_name: rail_supplement
+schema_description: Rail supplements overlay - HSR, underground platforms, construction/proposed, abandoned, branches, heritage, trolleybus
+
+sources:
+  osm:
+    type: osm
+    local_path: data/sources/eurasia.osm.pbf
+
+layers:
+
+  # ============================================================
+  # 1. HIGH-SPEED RAIL
+  # highspeed=yes catches open, construction, and proposed HS lines
+  # (they carry the tag at all lifecycle stages).
+  # Style: usage/service to isolate running lines from yard track;
+  #        railway to distinguish open/construction/proposed.
+  # ============================================================
+  - id: 1_HSR_avp
+    features:
+      - source: osm
+        geometry: line
+        min_zoom: 8
+        include_when:
+          __all__:
+            - highspeed: yes
+            - railway: __any__
+        exclude_when:
+          __any__:
+            - railway: construction
+            - railway: proposed
+            - railway: disused
+            - railway: abandoned
+            - railway: razed
+            - construction: __any__
+            - proposed: __any__
+            - disused:railway: __any__
+            - abandoned:railway: __any__
+            - razed:railway: __any__
+            - was:railway: __any__
+
+        attributes:
+          - key: railway
+            tag_value: railway          # rail / construction / proposed
+          - key: usage
+            tag_value: usage            # main / branch
+          - key: service
+            tag_value: service          # yard / siding / spur / crossover
+          - key: bridge
+            tag_value: bridge
+          - key: tunnel
+            tag_value: tunnel
+          - key: layer
+            tag_value: layer
+          - key: name
+            tag_value: name
+
+  # ============================================================
+  # 2. BRANCHES
+  # ============================================================
+  - id: 2_Branches_avp
+    features:
+      - source: osm
+        geometry: line
+        min_zoom: 10
+        include_when:
+          __all__:
+            - usage: branch
+            - railway: __any__   
+        exclude_when:
+          __any__:
+            - railway: subway
+            - railway: monorail
+            - railway: light_rail
+            - railway: tram
+            - railway: construction
+            - railway: proposed
+            - railway: disused
+            - railway: abandoned
+            - railway: razed
+            - construction: __any__
+            - proposed: __any__
+            - disused:railway: __any__
+            - abandoned:railway: __any__
+            - razed:railway: __any__
+            - was:railway: __any__
+            - highspeed: yes
+        attributes:
+          - key: railway
+            tag_value: railway
+          - key: service
+            tag_value: service
+          - key: bridge
+            tag_value: bridge
+          - key: tunnel
+            tag_value: tunnel
+          - key: layer
+            tag_value: layer
+
+  # ============================================================
+  # 3. CONSTRUCTION / PROPOSED (non-HSR; HSR handled above)
+  # Not in the base map, so carry bridge/tunnel for structure.
+  # ============================================================
+  - id: 3_Future_rails_avp
+    features:
+      - source: osm
+        geometry: line
+        min_zoom: 10
+        include_when:
+          __any__:
+            - railway: construction
+            - railway: proposed
+            - construction: rail
+            - proposed: rail
+        attributes:
+          - key: railway
+            tag_value: railway          # construction / proposed
+          - key: highspeed
+            tag_value: highspeed          # construction / proposed
+          - key: service
+            tag_value: service          # yard / siding / spur / crossover
+          - key: construction
+            tag_value: construction
+          - key: proposed
+            tag_value: proposed
+          - key: usage
+            tag_value: usage
+          - key: bridge
+            tag_value: bridge
+          - key: tunnel
+            tag_value: tunnel
+          - key: layer
+            tag_value: layer
+          - key: barrier
+            tag_value: barrier
+
+  # ============================================================
+  # 4. ABANDONED / FORMER RAIL
+  # All lifecycle forms. Not in base map, carry bridge/tunnel.
+  # ============================================================
+  - id: 4_Abandoned_avp
+    features:
+      - source: osm
+        geometry: line
+        min_zoom: 13
+        include_when:
+          __any__:
+            - railway: disused
+            - railway: abandoned
+            - railway: razed
+            - disused:railway: __any__
+            - abandoned:railway: __any__
+            - razed:railway: __any__
+            - was:railway: __any__
+            - historic: railway
+        attributes:
+          - key: railway
+            tag_value: railway
+          - key: highspeed
+            tag_value: highspeed          # construction / proposed
+          - key: service
+            tag_value: service          # yard / siding / spur / crossover
+          - key: disused_railway
+            tag_value: disused:railway
+          - key: abandoned_railway
+            tag_value: abandoned:railway
+          - key: razed_railway
+            tag_value: razed:railway
+          - key: was_railway
+            tag_value: was:railway
+          - key: bridge
+            tag_value: bridge
+          - key: tunnel
+            tag_value: tunnel
+          - key: layer
+            tag_value: layer
+
+  # ============================================================
+  # 5. TOURISM / HERITAGE
+  # Old form (railway=preserved), new form (railway:preserved=yes),
+  # and usage=tourism. Line geometry only excludes plinthed
+  # locomotives (which are nodes / trivial ways).
+  # ============================================================
+  - id: 5_Heritage_avp
+    features:
+      - source: osm
+        geometry: line
+        min_zoom: 8
+        include_when:
+          __any__:
+            - railway: preserved              # already railway-scoped, fine
+            - railway:preserved: yes          # already railway-scoped, fine
+            - __all__:
+                - usage: tourism
+                - railway: __any__            # tourism must be on a railway
+
+        attributes:
+          - key: railway
+            tag_value: railway          # base rail type on new-form preserved
+          - key: usage
+            tag_value: usage
+          - key: service
+            tag_value: service          # yard / siding / spur / crossover
+          - key: bridge
+            tag_value: bridge
+          - key: tunnel
+            tag_value: tunnel
+          - key: layer
+            tag_value: layer
+
+  # ============================================================
+  # 6. UNDERGROUND PLATFORMS
+  # The mesh geometry OMT excludes (location=underground).
+  # Both platform tagging schemes; keep line + polygon.
+  # ============================================================
+  - id: 6_Platforms_underground_avp
+    features:
+      - source: osm
+        geometry: polygon
+        min_zoom: 14
+        include_when:
+          __all__:
+            - railway: platform
+            - __any__:
+                - level: -1
+                - level: -2
+                - level: -3
+                - level: -4
+                - level: -5
+                - layer: -1
+                - layer: -2
+                - layer: -3
+                - layer: -4
+                - layer: -5
+        attributes:
+          - key: level
+            tag_value: level
+          - key: layer
+            tag_value: layer
+          - key: location
+            tag_value: location
+
+  # ============================================================
+  # 7. TROLLEYBUS WIRE
+  # Road-based catenary; draws as a highlight over streets.
+  # ============================================================
+  - id: 7_Trolleybus_avp
+    features:
+      - source: osm
+        geometry: line
+        min_zoom: 13
+        include_when:
+          trolley_wire: yes
+        attributes:
+          - key: trolley_wire
+            tag_value: trolley_wire
+
+  # ============================================================
+  # 8. METRO, MONORAIL AT z11
+  # .
+  # ============================================================
+  - id: 8_Metro_avp
+    features:
+      - source: osm
+        geometry: line
+        min_zoom: 11
+        max_zoom: 13
+        include_when:
+          __any__:
+            - railway: subway
+            - railway: monorail
+        exclude_when:
+          __any__:
+            - service: __any__        # excludes yards/sidings/spurs/crossovers            
+            - railway: construction
+            - railway: proposed
+            - railway: disused
+            - railway: abandoned
+            - railway: razed
+            - construction: __any__
+            - proposed: __any__
+            - disused:railway: __any__
+            - abandoned:railway: __any__
+            - razed:railway: __any__
+            - was:railway: __any__
+        attributes:
+          - key: railway
+            tag_value: railway          # rail / construction / proposed
+          - key: usage
+            tag_value: usage            # main / branch
+          - key: bridge
+            tag_value: bridge
+          - key: tunnel
+            tag_value: tunnel
+          - key: layer
+            tag_value: layer
+
+  # ============================================================
+  # 9. TRAM AT z13
+  # .
+  # ============================================================
+  - id: 9_Tram_avp
+    features:
+      - source: osm
+        geometry: line
+        min_zoom: 13
+        max_zoom: 13
+        include_when:
+          - railway: tram
+        exclude_when:
+          __any__:
+            - railway: construction
+            - railway: proposed
+            - railway: disused
+            - railway: abandoned
+            - railway: razed
+            - construction: __any__
+            - proposed: __any__
+            - disused:railway: __any__
+            - abandoned:railway: __any__
+            - razed:railway: __any__
+            - was:railway: __any__
+        attributes:
+          - key: usage
+            tag_value: usage            # main / branch
+          - key: service
+            tag_value: service          # yard / siding / spur / crossover
+          - key: bridge
+            tag_value: bridge
+          - key: tunnel
+            tag_value: tunnel
+          - key: layer
+            tag_value: layer
+          - key: name
+            tag_value: name
+          
