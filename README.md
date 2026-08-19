@@ -1,6 +1,10 @@
 # NIMBY-Rails-Track-Supplement
 Includes OSM tracks and certain other transit elements and additional fields not present in NIMBY Rails 1.19 base map
 
+Files included:
+- World and regions (Americas, Eurasia, Africa-Oceania) pmtiles files
+- Schema file rail-supplement.yml. When using, change local source as relevant.
+
 # Licenses
 
 This repository contains two kinds of material under two different licenses.
