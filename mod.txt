@@ -1,0 +1,1912 @@
+
+[ModMeta]
+schema=1
+name=OSM tracks for 1.19
+author=adlet
+desc=OSM tracks for NIMBY Rails 1.19
+version=1.4.0
+signature=123456789012
+
+;===========================================================================================================
+;
+;-----Railways Lines------------------------
+;
+;=============================================
+
+[StyleLine]
+source_layer = transportation
+and subclass = rail
+and not brunnel = bridge, tunnel
+and not service = yard, siding, spur, crossover
+pass1_color = #999999ff
+pass2_color = #960541ff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 12
+pass2_half_stroke_px_dec = 6
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = transportation
+and subclass = rail
+and brunnel = bridge
+pass1_texture = default/white_bridge_ptt.png
+pass2_texture = default/white_ptt.png
+pass1_color = #00ff00ff
+pass1_half_stroke_phys_mm = 800
+pass1_half_stroke_px_dec = 16
+pass2_color = #960541ff
+pass2_half_stroke_phys_mm = 400
+pass2_half_stroke_px_dec = 6
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = transportation
+and subclass = rail
+and brunnel = tunnel
+pass1_texture = default/white_ptt.png
+pass2_texture = default/white_ptt.png
+pass1_color = #0C186Bff
+pass1_half_stroke_phys_mm = 1100
+pass1_half_stroke_px_dec = 16
+pass2_color = #960541ff
+pass2_half_stroke_phys_mm = 400
+pass2_half_stroke_px_dec = 6
+gameplay_layer = 5
+
+;===========================================================================================================
+;
+;-----Railway Yards, Sidings, Crossovers, Spurs------------------------
+;
+;=============================================
+
+[StyleLine]
+source_layer = transportation
+and subclass = rail
+and not brunnel = bridge, tunnel
+and service = yard, siding, crossover
+pass1_color = #99999900
+pass2_color = #333333ff
+pass2_half_stroke_phys_mm = 300
+pass1_half_stroke_px_dec = 12
+pass2_half_stroke_px_dec = 6
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = transportation
+and subclass = rail
+and not brunnel = bridge, tunnel
+and service = spur
+pass1_color = #99999900
+pass2_color = #755E39ff
+pass2_half_stroke_phys_mm = 300
+pass1_half_stroke_px_dec = 12
+pass2_half_stroke_px_dec = 6
+gameplay_layer = 5
+
+;===========================================================================================================
+;
+;-----Railway Narrow Gauge------------------------
+;
+;=============================================
+
+[StyleLine]
+source_layer = transportation
+and subclass = narrow_gauge
+and not brunnel = bridge, tunnel
+pass1_color = #FFFFFF00
+pass2_color = #456b02ff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 12
+pass2_half_stroke_px_dec = 6
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = transportation
+and subclass = narrow_gauge
+and brunnel = bridge
+pass1_texture = default/white_bridge_ptt.png
+pass2_texture = default/white_ptt.png
+pass1_color = #00ff00ff
+pass1_half_stroke_phys_mm = 800
+pass2_color = #456b02ff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 16
+pass2_half_stroke_px_dec = 6
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = transportation
+and subclass = narrow_gauge
+and brunnel = tunnel
+pass1_texture = default/white_ptt.png
+pass2_texture = default/white_ptt.png
+pass1_color = #0C186Bff
+pass1_half_stroke_phys_mm = 1100
+pass2_color = #456b02ff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 16
+pass2_half_stroke_px_dec = 6
+gameplay_layer = 5
+
+;===========================================================================================================
+;
+;-----Subways------------------------
+;
+;=============================================
+
+[StyleLine]
+source_layer = transportation
+and subclass = subway
+and not brunnel = bridge, tunnel
+pass1_color = #FFFFFF00
+pass2_color = #2921f2ff
+pass1_half_stroke_phys_mm = 400
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 16
+pass2_half_stroke_px_dec = 8
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = transportation
+and subclass = subway
+and brunnel = bridge
+pass1_texture = default/white_bridge_ptt.png
+pass2_texture = default/white_ptt.png
+pass1_color = #00ff00ff
+pass1_half_stroke_phys_mm = 800
+pass2_color = #2921F2ff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 8
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = transportation
+and subclass = subway
+and brunnel = tunnel
+pass1_texture = default/white_ptt.png
+pass2_texture = default/white_ptt.png
+pass1_color = #0C186Bff
+pass1_half_stroke_phys_mm = 1100
+pass2_color = #2921F2ff
+pass2_half_stroke_phys_mm = 400
+gameplay_layer = 5
+
+;===========================================================================================================
+;
+;-----Tram------------------------
+;
+;=============================================
+
+[StyleLine]
+source_layer = transportation
+and subclass = tram
+and not brunnel = bridge, tunnel
+pass2_texture = default/white_ptt.png
+pass1_color = #99999900
+pass2_color = #FF01ACff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 16
+pass2_half_stroke_px_dec = 8
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = transportation
+and subclass = tram
+and brunnel = bridge
+pass1_texture = default/white_bridge_ptt.png
+pass2_texture = default/white_ptt.png
+pass1_color = #00ff00ff
+pass1_half_stroke_phys_mm = 800
+pass2_color = #FF01ACff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 8
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = transportation
+and subclass = tram
+and brunnel = tunnel
+pass1_texture = default/white_ptt.png
+pass2_texture = default/white_ptt.png
+pass1_color = #0C186Bff
+pass1_half_stroke_phys_mm = 1100
+pass2_color = #FF01ACff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 8
+gameplay_layer = 5
+
+;===========================================================================================================
+;
+;-----Light rail, AGT------------------------
+;
+;=============================================
+
+[StyleLine]
+source_layer = transportation
+and subclass = light_rail
+and not brunnel = bridge, tunnel
+pass1_color = #99999900
+pass2_color = #E801ECff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 16
+pass2_half_stroke_px_dec = 8
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = transportation
+and subclass = light_rail
+and brunnel = bridge
+pass1_texture = default/white_bridge_ptt.png
+pass2_texture = default/white_ptt.png
+pass1_color = #66FF66ff
+pass1_half_stroke_phys_mm = 1600
+pass2_color = #E801ECff
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 8
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = transportation
+and subclass = light_rail
+and brunnel = tunnel
+pass1_texture = default/white_ptt.png
+pass2_texture = default/white_ptt.png
+pass1_color = #0C186Bff
+pass1_half_stroke_phys_mm = 1100
+pass2_color = #E801ECff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 8
+gameplay_layer = 5
+
+;===========================================================================================================
+;
+;-----Busways, Bus Guideways------------------------
+;
+;=============================================
+
+[StyleLine]
+source_layer = transportation
+and class = busway, bus_guideway
+and not brunnel = bridge, tunnel
+pass1_texture = default/white_bridge_ptt.png
+pass2_texture = default/white_ptt.png
+pass1_color = #888888ff
+pass1_half_stroke_phys_mm = 800
+pass2_color = #FFC310ff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 8
+opacity = 12.9, 0%, 13, 100%
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = transportation
+and class = busway, bus_guideway
+and brunnel = bridge
+pass1_texture = default/white_bridge_ptt.png
+pass2_texture = default/white_ptt.png
+pass1_color = #00ff00ff
+pass1_half_stroke_phys_mm = 800
+pass2_color = #FFC310ff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 8
+opacity = 12.9, 0%, 13, 100%
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = transportation
+and class = busway, bus_guideway
+and brunnel = tunnel
+pass1_texture = default/white_ptt.png
+pass2_texture = default/white_ptt.png
+pass1_color = #0C186Bff
+pass1_half_stroke_phys_mm = 1100
+pass2_color = #FFC310ff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 8
+opacity = 12.9, 0%, 13, 100%
+gameplay_layer = 5
+
+;===========================================================================================================
+;
+;-----Monorails, AGT------------------------
+;
+;=============================================
+
+[StyleLine]
+source_layer = transportation
+and subclass = monorail
+and not brunnel = bridge, tunnel
+pass2_texture = default/white_ptt.png
+pass1_color = #99999900
+pass2_color = #880EECff
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 8
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = transportation
+and subclass = monorail
+and brunnel = bridge
+pass1_texture = default/white_bridge_ptt.png
+pass2_texture = default/white_ptt.png
+pass1_color = #FFFF88ff
+pass1_half_stroke_phys_mm = 1200
+pass2_color = #880EECff
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 8
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = transportation
+and subclass = monorail
+and brunnel = tunnel
+pass1_texture = default/white_ptt.png
+pass2_texture = default/white_ptt.png
+pass1_color = #0C186Bff
+pass1_half_stroke_phys_mm = 1200
+pass2_color = #880EECff
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 8
+gameplay_layer = 5
+
+;===========================================================================================================
+;
+;-----Funiculars------------------------
+;
+;=============================================
+
+[StyleLine]
+source_layer = transportation
+and subclass = funicular
+and not brunnel = bridge, tunnel
+pass1_texture = default/white_ptt.png
+pass2_texture = default/white_ptt.png
+pass1_color = #888888ff
+pass1_half_stroke_phys_mm = 1200
+pass2_color = #A8520Cff
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 8
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = transportation
+and subclass = funicular
+and brunnel = bridge
+pass1_texture = default/white_bridge_ptt.png
+pass2_texture = default/white_ptt.png
+pass1_color = #00ff00ff
+pass1_half_stroke_phys_mm = 1200
+pass2_color = #A8520Cff
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 8
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = transportation
+and subclass = funicular
+and brunnel = tunnel
+pass1_texture = default/white_ptt.png
+pass2_texture = default/white_ptt.png
+pass1_color = #0C186Bff
+pass1_half_stroke_phys_mm = 1300
+pass2_color = #A8520Cff
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 8
+gameplay_layer = 5
+
+;===========================================================================================================
+;
+;-----Preserved, Tourism------------------------
+;
+;=============================================
+
+[StyleLine]
+source_layer = transportation
+and subclass = preserved
+pass1_texture = default/white_ptt.png
+pass2_texture = default/white_ptt.png
+pass1_color = #999999ff
+pass1_half_stroke_phys_mm = 800
+pass2_color = #01FFA6ff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 8
+gameplay_layer = 5
+
+;===========================================================================================================
+;
+;-----Ferries, Aerials------------------------
+;
+;=============================================
+
+[StyleLine]
+source_layer = transportation
+and class = ferry
+pass1_texture = default/white_ptt.png
+pass2_texture = default/white_ptt.png
+pass1_color = #ccccccff
+pass1_half_stroke_phys_mm = 900
+pass2_color = #4AE1FFff
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 12
+pass2_half_stroke_px_dec = 6
+opacity = 12, 0%, 13, 100%
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = transportation
+and class = aerialway
+pass1_color = #0A43F0ff
+pass2_color = #FFFFFF00
+pass1_half_stroke_phys_mm = 900
+;pass1_half_stroke_px_dec = 16
+pass1_half_stroke_px_dec = 6
+gameplay_layer = 5
+
+;===========================================================================================================
+;
+;-----Platforms------------------------
+;
+;=============================================
+
+[StyleMesh]
+source_layer = transportation
+and subclass = platform
+color = rgb(176, 180, 182)
+opacity = 11, 80%, 16, 100%
+texture = default/mesh_04.png
+
+[StyleLine]
+source_layer = transportation
+and subclass = platform
+pass1_color = #119FFFff
+pass1_half_stroke_phys_mm = 100
+pass2_color = #1058F2ff
+pass2_half_stroke_phys_mm = 70
+opacity = 11, 10%, 13, 100%
+gameplay_layer=5
+
+;===========================================================================================================
+;
+;-----High Speed Rail------------------------
+;
+;=============================================
+
+[StyleLine]
+source_layer = 1_HSR_avp
+or usage = main, branch
+and not bridge = yes, viaduct, movable
+and not tunnel = yes
+pass1_color = #999999ff
+pass2_color = #FF0000ff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 12
+pass2_half_stroke_px_dec = 6
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 1_HSR_avp
+or usage = main, branch
+and bridge = yes, viaduct, movable
+pass1_texture = default/white_bridge_ptt.png
+pass2_texture = default/white_ptt.png
+pass1_color = #00FF00ff
+pass2_color = #FF0000ff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 8
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 1_HSR_avp
+or usage = main, branch
+and tunnel = yes
+pass1_texture = default/white_ptt.png
+pass2_texture = default/white_ptt.png
+pass1_color = #6B0707ff
+pass2_color = #FF0000ff
+pass1_half_stroke_phys_mm = 1100
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 4
+gameplay_layer = 5
+
+;===========================================================================================================
+;
+;-----Branches and Other------------------------
+;
+;=============================================
+
+[StyleLine]
+source_layer = 2_Branches_avp
+and not bridge = yes, viaduct, movable
+and not tunnel = yes
+pass1_color = #66666600
+pass2_color = #AD7681ff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 16
+pass2_half_stroke_px_dec = 6
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 2_Branches_avp
+and bridge = yes, viaduct, movable
+pass1_texture = default/white_bridge_ptt.png
+pass2_texture = default/white_ptt.png
+pass1_color = #00ff00ff
+pass2_color = #AD7681ff
+pass1_half_stroke_phys_mm = 800
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 16
+pass2_half_stroke_px_dec = 6
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 2_Branches_avp
+and tunnel = yes
+pass1_texture = default/white_ptt.png
+pass2_texture = default/white_ptt.png
+pass1_color = #0C186Bff
+pass2_color = #AD7681ff
+pass1_half_stroke_phys_mm = 1100
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 16
+pass2_half_stroke_px_dec = 6
+gameplay_layer = 5
+
+;===========================================================================================================
+;
+;-----Future tracks------------------------
+;
+;===========================================================================================================
+
+;===========================================================================================================
+;-----Railway = construction------------------------
+;===========================================================================================================
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or railway = construction
+and not highspeed = yes
+and not bridge = yes, viaduct, movable
+and not tunnel = yes
+pass2_texture = default/dash_nn.png
+pass1_color = #99999900
+pass2_color = #960541ff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 8
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or railway = construction
+and not highspeed = yes
+and bridge = yes, viaduct, movable
+pass2_texture = default/dash_nn.png
+pass1_color = #00FF00FF
+pass2_color = #960541ff
+pass1_half_stroke_phys_mm = 1000
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 16
+pass2_half_stroke_px_dec = 12
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or railway = construction
+and not highspeed = yes
+and tunnel = yes
+pass2_texture = default/dash_nn.png
+pass1_color = #0F99FFff
+pass2_color = #960541ff
+pass1_half_stroke_phys_mm = 1000
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 16
+pass2_half_stroke_px_dec = 10
+gameplay_layer = 5
+
+;===========================================================================================================
+;-----Construction = rail------------------------
+;===========================================================================================================
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or construction = rail
+and not barrier = fence
+and not landuse = construction
+and not highspeed = yes
+and not service = yard, siding, spur, crossover
+and not bridge = yes, viaduct, movable
+and not tunnel = yes
+pass2_texture = default/dash_nn.png
+pass1_color = #99999900
+pass2_color = #960541ff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 8
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or construction = rail
+and not barrier = fence
+and not landuse = construction
+and not highspeed = yes
+and not service = yard, siding, spur, crossover
+and bridge = yes, viaduct, movable
+pass2_texture = default/dash_nn.png
+pass1_color = #00FF00FF
+pass2_color = #960541ff
+pass1_half_stroke_phys_mm = 1000
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 16
+pass2_half_stroke_px_dec = 12
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or construction = rail
+and not barrier = fence
+and not landuse = construction
+and not highspeed = yes
+and not service = yard, siding, spur, crossover
+and tunnel = yes
+pass2_texture = default/dash_nn.png
+pass1_color = #0F99FFff
+pass2_color = #960541ff
+pass1_half_stroke_phys_mm = 1000
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 16
+pass2_half_stroke_px_dec = 10
+gameplay_layer = 5
+
+;===========================================================================================================
+;-----Proposed = rail------------------------
+;===========================================================================================================
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or proposed = rail
+and not highspeed = yes
+and not service = yard, siding, spur, crossover
+and not bridge = yes, viaduct, movable
+and not tunnel = yes
+pass2_texture = default/dots_nn.png
+pass1_color = #99999900
+pass2_color = #960541ff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 12
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or proposed = rail
+and not barrier = fence
+and not landuse = construction
+and not highspeed = yes
+and not service = yard, siding, spur, crossover
+and bridge = yes, viaduct, movable
+pass2_texture = default/dots_nn.png
+pass1_color = #00FF00FF
+pass2_color = #960541ff
+pass1_half_stroke_phys_mm = 1000
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 16
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or proposed = rail
+and not barrier = fence
+and not landuse = construction
+and not highspeed = yes
+and not service = yard, siding, spur, crossover
+and tunnel = yes
+pass2_texture = default/dots_nn.png
+pass1_color = #0F99FFff
+pass2_color = #960541ff
+pass1_half_stroke_phys_mm = 1000
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 16
+gameplay_layer = 5
+
+;===========================================================================================================
+;-----Construction = rail, branch------------------------
+;===========================================================================================================
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or construction = rail
+and usage = branch
+and not highspeed = yes
+and not service = yard, siding, spur, crossover
+and not bridge = yes, viaduct, movable
+and not tunnel = yes
+pass2_texture = default/dash_nn.png
+pass1_color = #99999900
+pass2_color = #AD7681ff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 8
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or construction = rail
+and usage = branch
+and not highspeed = yes
+and not service = yard, siding, spur, crossover
+and bridge = yes, viaduct, movable
+pass2_texture = default/dash_nn.png
+pass1_color = #00FF00FF
+pass2_color = #AD7681ff
+pass1_half_stroke_phys_mm = 1000
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 16
+pass2_half_stroke_px_dec = 12
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or construction = rail
+and usage = branch
+and not highspeed = yes
+and not service = yard, siding, spur, crossover
+and tunnel = yes
+pass2_texture = default/dash_nn.png
+pass1_color = #0F99FFff
+pass2_color = #AD7681ff
+pass1_half_stroke_phys_mm = 1000
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 16
+pass2_half_stroke_px_dec = 10
+gameplay_layer = 5
+
+;===========================================================================================================
+;-----Proposed = rail, branch------------------------
+;===========================================================================================================
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or proposed = rail
+and usage = branch
+and not highspeed = yes
+and not service = yard, siding, spur, crossover
+and not bridge = yes, viaduct, movable
+and not tunnel = yes
+pass2_texture = default/dots_nn.png
+pass1_color = #99999900
+pass2_color = #AD7681ff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 12
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or proposed = rail
+and usage = branch
+and not highspeed = yes
+and not service = yard, siding, spur, crossover
+and bridge = yes, viaduct, movable
+pass2_texture = default/dots_nn.png
+pass1_color = #00FF00FF
+pass2_color = #AD7681ff
+pass1_half_stroke_phys_mm = 1000
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 16
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or proposed = rail
+and usage = branch
+and not highspeed = yes
+and not service = yard, siding, spur, crossover
+and tunnel = yes
+pass2_texture = default/dots_nn.png
+pass1_color = #0F99FFff
+pass2_color = #AD7681ff
+pass1_half_stroke_phys_mm = 1000
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 16
+gameplay_layer = 5
+
+;===========================================================================================================
+;-----Construction = narrow_gauge------------------------
+;===========================================================================================================
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or construction = narrow_gauge
+and not service = yard, siding, spur, crossover
+and not bridge = yes, viaduct, movable
+and not tunnel = yes
+pass2_texture = default/dash_nn.png
+pass1_color = #99999900
+pass2_color = #456b02ff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 8
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or construction = narrow_gauge
+and not service = yard, siding, spur, crossover
+and bridge = yes, viaduct, movable
+pass2_texture = default/dash_nn.png
+pass1_color = #00FF00FF
+pass2_color = #456b02ff
+pass1_half_stroke_phys_mm = 1000
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 16
+pass2_half_stroke_px_dec = 12
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or construction = narrow_gauge
+and not service = yard, siding, spur, crossover
+and tunnel = yes
+pass2_texture = default/dash_nn.png
+pass1_color = #0F99FFff
+pass2_color = #456b02ff
+pass1_half_stroke_phys_mm = 1000
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 16
+pass2_half_stroke_px_dec = 10
+gameplay_layer = 5
+
+;===========================================================================================================
+;-----Proposed = narrow_gauge------------------------
+;===========================================================================================================
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or proposed = narrow_gauge
+and not service = yard, siding, spur, crossover
+and not bridge = yes, viaduct, movable
+and not tunnel = yes
+pass2_texture = default/dots_nn.png
+pass1_color = #99999900
+pass2_color = #456b02ff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 12
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or proposed = narrow_gauge
+and not service = yard, siding, spur, crossover
+and bridge = yes, viaduct, movable
+pass2_texture = default/dots_nn.png
+pass1_color = #00FF00FF
+pass2_color = #456b02ff
+pass1_half_stroke_phys_mm = 1000
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 16
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or proposed = narrow_gauge
+and not service = yard, siding, spur, crossover
+and tunnel = yes
+pass2_texture = default/dots_nn.png
+pass1_color = #0F99FFff
+pass2_color = #456b02ff
+pass1_half_stroke_phys_mm = 1000
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 16
+gameplay_layer = 5
+
+;===========================================================================================================
+;-----Construction = rail, highspeed------------------------
+;===========================================================================================================
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or construction = rail
+and highspeed = yes
+and not service = yard, siding, spur, crossover
+and not bridge = yes, viaduct, movable
+and not tunnel = yes
+pass2_texture = default/dash_nn.png
+pass1_color = #99999900
+pass2_color = #FF0000ff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 8
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or construction = rail
+and highspeed = yes
+and not service = yard, siding, spur, crossover
+and bridge = yes, viaduct, movable
+pass2_texture = default/dash_nn.png
+pass1_color = #00FF00FF
+pass2_color = #FF0000ff
+pass1_half_stroke_phys_mm = 1000
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 16
+pass2_half_stroke_px_dec = 12
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or construction = rail
+and highspeed = yes
+and not service = yard, siding, spur, crossover
+and tunnel = yes
+pass2_texture = default/dash_nn.png
+pass1_color = #0F99FFff
+pass2_color = #FF0000ff
+pass1_half_stroke_phys_mm = 1000
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 16
+pass2_half_stroke_px_dec = 10
+gameplay_layer = 5
+
+;===========================================================================================================
+;-----Proposed = rail, highspeed------------------------
+;===========================================================================================================
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or proposed = rail
+and highspeed = yes
+and not service = yard, siding, spur, crossover
+and not bridge = yes, viaduct, movable
+and not tunnel = yes
+pass2_texture = default/dots_nn.png
+pass1_color = #99999900
+pass2_color = #FF0000ff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 12
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or proposed = rail
+and highspeed = yes
+and not service = yard, siding, spur, crossover
+and bridge = yes, viaduct, movable
+pass2_texture = default/dots_nn.png
+pass1_color = #00FF00FF
+pass2_color = #FF0000ff
+pass1_half_stroke_phys_mm = 1000
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 16
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or proposed = rail
+and highspeed = yes
+and not service = yard, siding, spur, crossover
+and tunnel = yes
+pass2_texture = default/dots_nn.png
+pass1_color = #0F99FFff
+pass2_color = #FF0000ff
+pass1_half_stroke_phys_mm = 1000
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 16
+gameplay_layer = 5
+
+;===========================================================================================================
+;-----Construction = rail, yard, siding, crossover------------------------
+;===========================================================================================================
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or construction = rail
+and usage = yard, siding, crossover
+and not bridge = yes, viaduct, movable
+and not tunnel = yes
+pass2_texture = default/dash_nn.png
+pass1_color = #99999900
+pass2_color = #333333ff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 8
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or construction = rail
+and usage = yard, siding, crossover
+and bridge = yes, viaduct, movable
+pass2_texture = default/dash_nn.png
+pass1_color = #00FF00FF
+pass2_color = #333333ff
+pass1_half_stroke_phys_mm = 1000
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 16
+pass2_half_stroke_px_dec = 12
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or construction = rail
+and usage = yard, siding, crossover
+and tunnel = yes
+pass2_texture = default/dash_nn.png
+pass1_color = #0F99FFff
+pass2_color = #333333ff
+pass1_half_stroke_phys_mm = 1000
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 16
+pass2_half_stroke_px_dec = 10
+gameplay_layer = 5
+
+;===========================================================================================================
+;-----Proposed = rail, yard, siding, crossover------------------------
+;===========================================================================================================
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or proposed = rail
+and usage = yard, siding, crossover
+and not bridge = yes, viaduct, movable
+and not tunnel = yes
+pass2_texture = default/dots_nn.png
+pass1_color = #99999900
+pass2_color = #333333ff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 12
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or proposed = rail
+and usage = yard, siding, crossover
+and bridge = yes, viaduct, movable
+pass2_texture = default/dots_nn.png
+pass1_color = #00FF00FF
+pass2_color = #333333ff
+pass1_half_stroke_phys_mm = 1000
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 16
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or proposed = rail
+and usage = yard, siding, crossover
+and tunnel = yes
+pass2_texture = default/dots_nn.png
+pass1_color = #0F99FFff
+pass2_color = #333333ff
+pass1_half_stroke_phys_mm = 1000
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 16
+gameplay_layer = 5
+
+;===========================================================================================================
+;-----Construction = rail, spur------------------------
+;===========================================================================================================
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or construction = rail
+and usage = spur
+and not bridge = yes, viaduct, movable
+and not tunnel = yes
+pass2_texture = default/dash_nn.png
+pass1_color = #99999900
+pass2_color = #755E39ff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 8
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or construction = rail
+and usage = spur
+and bridge = yes, viaduct, movable
+pass2_texture = default/dash_nn.png
+pass1_color = #00FF00FF
+pass2_color = #755E39ff
+pass1_half_stroke_phys_mm = 1000
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 16
+pass2_half_stroke_px_dec = 12
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or construction = rail
+and usage = spur
+and tunnel = yes
+pass2_texture = default/dash_nn.png
+pass1_color = #0F99FFff
+pass2_color = #755E39ff
+pass1_half_stroke_phys_mm = 1000
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 16
+pass2_half_stroke_px_dec = 10
+gameplay_layer = 5
+
+;===========================================================================================================
+;-----Proposed = rail, spur------------------------
+;===========================================================================================================
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or proposed = rail
+and usage = spur
+and not bridge = yes, viaduct, movable
+and not tunnel = yes
+pass2_texture = default/dots_nn.png
+pass1_color = #99999900
+pass2_color = #755E39ff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 12
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or proposed = rail
+and usage = spur
+and bridge = yes, viaduct, movable
+pass2_texture = default/dots_nn.png
+pass1_color = #00FF00FF
+pass2_color = #755E39ff
+pass1_half_stroke_phys_mm = 1000
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 16
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or proposed = rail
+and usage = spur
+and tunnel = yes
+pass2_texture = default/dots_nn.png
+pass1_color = #0F99FFff
+pass2_color = #755E39ff
+pass1_half_stroke_phys_mm = 1000
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 16
+gameplay_layer = 5
+
+;===========================================================================================================
+;-----Construction = subway------------------------
+;===========================================================================================================
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or construction = subway
+and not bridge = yes, viaduct, movable
+and not tunnel = yes
+pass2_texture = default/dash_nn.png
+pass1_color = #99999900
+pass2_color = #2921f2ff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 8
+opacity = 10.9, 0%, 11, 100%
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or construction = subway
+and bridge = yes, viaduct, movable
+pass2_texture = default/dash_nn.png
+pass1_color = #00FF00FF
+pass2_color = #2921f2ff
+pass1_half_stroke_phys_mm = 1000
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 16
+pass2_half_stroke_px_dec = 12
+opacity = 10.9, 0%, 11, 100%
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or construction = subway
+and tunnel = yes
+pass2_texture = default/dash_nn.png
+pass1_color = #0F99FFff
+pass2_color = #2921f2ff
+pass1_half_stroke_phys_mm = 1000
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 16
+pass2_half_stroke_px_dec = 10
+opacity = 10.9, 0%, 11, 100%
+gameplay_layer = 5
+
+;===========================================================================================================
+;-----Proposed = subway------------------------
+;===========================================================================================================
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or proposed = subway
+and not bridge = yes, viaduct, movable
+and not tunnel = yes
+pass2_texture = default/dots_nn.png
+pass1_color = #99999900
+pass2_color = #2921f2ff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 12
+opacity = 10.9, 0%, 11, 100%
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or proposed = subway
+and bridge = yes, viaduct, movable
+pass2_texture = default/dots_nn.png
+pass1_color = #00FF00FF
+pass2_color = #2921f2ff
+pass1_half_stroke_phys_mm = 1000
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 16
+opacity = 10.9, 0%, 11, 100%
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or proposed = subway
+and tunnel = yes
+pass2_texture = default/dots_nn.png
+pass1_color = #0F99FFff
+pass2_color = #2921f2ff
+pass1_half_stroke_phys_mm = 1000
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 16
+opacity = 10.9, 0%, 11, 100%
+gameplay_layer = 5
+
+;===========================================================================================================
+;-----Construction = tram------------------------
+;===========================================================================================================
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or construction = tram
+and not bridge = yes, viaduct, movable
+and not tunnel = yes
+pass2_texture = default/dash_nn.png
+pass1_color = #99999900
+pass2_color = #FF01ACff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 8
+opacity = 12.9, 0%, 13, 100%
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or construction = tram
+and bridge = yes, viaduct, movable
+pass2_texture = default/dash_nn.png
+pass1_color = #00FF00FF
+pass2_color = #FF01ACff
+pass1_half_stroke_phys_mm = 1000
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 16
+pass2_half_stroke_px_dec = 12
+opacity = 12.9, 0%, 13, 100%
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or construction = tram
+and tunnel = yes
+pass2_texture = default/dash_nn.png
+pass1_color = #0F99FFff
+pass2_color = #FF01ACff
+pass1_half_stroke_phys_mm = 1000
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 16
+pass2_half_stroke_px_dec = 10
+opacity = 12.9, 0%, 13, 100%
+gameplay_layer = 5
+
+;===========================================================================================================
+;-----Proposed = tram------------------------
+;===========================================================================================================
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or proposed = tram
+and not bridge = yes, viaduct, movable
+and not tunnel = yes
+pass2_texture = default/dots_nn.png
+pass1_color = #99999900
+pass2_color = #FF01ACff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 12
+opacity = 12.9, 0%, 13, 100%
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or proposed = tram
+and bridge = yes, viaduct, movable
+pass2_texture = default/dots_nn.png
+pass1_color = #00FF00FF
+pass2_color = #FF01ACff
+pass1_half_stroke_phys_mm = 1000
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 16
+opacity = 12.9, 0%, 13, 100%
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or proposed = tram
+and tunnel = yes
+pass2_texture = default/dots_nn.png
+pass1_color = #0F99FFff
+pass2_color = #FF01ACff
+pass1_half_stroke_phys_mm = 1000
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 16
+opacity = 12.9, 0%, 13, 100%
+gameplay_layer = 5
+
+;===========================================================================================================
+;-----Construction = light rail------------------------
+;===========================================================================================================
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or construction = light_rail
+and not bridge = yes, viaduct, movable
+and not tunnel = yes
+pass2_texture = default/dash_nn.png
+pass1_color = #99999900
+pass2_color = #E801ECff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 8
+opacity = 10.9, 0%, 11, 100%
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or construction = light_rail
+and bridge = yes, viaduct, movable
+pass2_texture = default/dash_nn.png
+pass1_color = #00FF00FF
+pass2_color = #E801ECff
+pass1_half_stroke_phys_mm = 1000
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 16
+pass2_half_stroke_px_dec = 12
+opacity = 10.9, 0%, 11, 100%
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or construction = light_rail
+and tunnel = yes
+pass2_texture = default/dash_nn.png
+pass1_color = #0F99FFff
+pass2_color = #E801ECff
+pass1_half_stroke_phys_mm = 1000
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 16
+pass2_half_stroke_px_dec = 10
+opacity = 10.9, 0%, 11, 100%
+gameplay_layer = 5
+
+;===========================================================================================================
+;-----Proposed = light rail------------------------
+;===========================================================================================================
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or proposed = light_rail
+and not bridge = yes, viaduct, movable
+and not tunnel = yes
+pass2_texture = default/dots_nn.png
+pass1_color = #99999900
+pass2_color = #E801ECff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 12
+opacity = 10.9, 0%, 11, 100%
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or proposed = light_rail
+and bridge = yes, viaduct, movable
+pass2_texture = default/dots_nn.png
+pass1_color = #00FF00FF
+pass2_color = #E801ECff
+pass1_half_stroke_phys_mm = 1000
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 16
+opacity = 10.9, 0%, 11, 100%
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or proposed = light_rail
+and tunnel = yes
+pass2_texture = default/dots_nn.png
+pass1_color = #0F99FFff
+pass2_color = #E801ECff
+pass1_half_stroke_phys_mm = 1000
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 16
+opacity = 10.9, 0%, 11, 100%
+gameplay_layer = 5
+
+;===========================================================================================================
+;-----Construction = monorail------------------------
+;===========================================================================================================
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or construction = monorail
+and not bridge = yes, viaduct, movable
+and not tunnel = yes
+pass2_texture = default/dash_nn.png
+pass1_color = #99999900
+pass2_color = #880EECff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 8
+opacity = 12.9, 0%, 13, 100%
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or construction = monorail
+and bridge = yes, viaduct, movable
+pass2_texture = default/dash_nn.png
+pass1_color = #00FF00FF
+pass2_color = #880EECff
+pass1_half_stroke_phys_mm = 1000
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 16
+pass2_half_stroke_px_dec = 12
+opacity = 12.9, 0%, 13, 100%
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or construction = monorail
+and tunnel = yes
+pass2_texture = default/dash_nn.png
+pass1_color = #0F99FFff
+pass2_color = #880EECff
+pass1_half_stroke_phys_mm = 1000
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 16
+pass2_half_stroke_px_dec = 10
+opacity = 12.9, 0%, 13, 100%
+gameplay_layer = 5
+
+;===========================================================================================================
+;-----Proposed = monorail------------------------
+;===========================================================================================================
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or proposed = monorail
+and not bridge = yes, viaduct, movable
+and not tunnel = yes
+pass2_texture = default/dots_nn.png
+pass1_color = #99999900
+pass2_color = #880EECff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 12
+opacity = 12.9, 0%, 13, 100%
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or proposed = monorail
+and bridge = yes, viaduct, movable
+pass2_texture = default/dots_nn.png
+pass1_color = #00FF00FF
+pass2_color = #880EECff
+pass1_half_stroke_phys_mm = 1000
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 16
+opacity = 12.9, 0%, 13, 100%
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or proposed = monorail
+and tunnel = yes
+pass2_texture = default/dots_nn.png
+pass1_color = #0F99FFff
+pass2_color = #880EECff
+pass1_half_stroke_phys_mm = 1000
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 16
+opacity = 12.9, 0%, 13, 100%
+gameplay_layer = 5
+
+;===========================================================================================================
+;-----Construction = aerial, funicular------------------------
+;===========================================================================================================
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or construction = cable_car, gondola, mixed_lift, chair_lift
+pass2_texture = default/dash_nn.png
+pass1_color = #99999900
+pass2_color = #0A43F0ff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 8
+opacity = 11.9, 0%, 12, 100%
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or aerialway = construction
+pass2_texture = default/dash_nn.png
+pass1_color = #99999900
+pass2_color = #0A43F0ff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 8
+opacity = 11.9, 0%, 12, 100%
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or construction = funicular
+pass2_texture = default/dash_nn.png
+pass1_color = #99999900
+pass2_color = #A8520Cff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 8
+opacity = 11.9, 0%, 12, 100%
+gameplay_layer = 5
+
+;===========================================================================================================
+;-----Proposed = aerial, funicular------------------------
+;===========================================================================================================
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or proposed = cable_car, gondola, mixed_lift, chair_lift
+pass2_texture = default/dots_nn.png
+pass1_color = #99999900
+pass2_color = #0A43F0ff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 12
+opacity = 11.9, 0%, 12, 100%
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or aerialway = proposed
+pass2_texture = default/dots_nn.png
+pass1_color = #99999900
+pass2_color = #0A43F0ff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 12
+opacity = 11.9, 0%, 12, 100%
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 3_Future_rails_avp
+or proposed = funicular
+pass2_texture = default/dots_nn.png
+pass1_color = #99999900
+pass2_color = #A8520Cff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 12
+opacity = 11.9, 0%, 12, 100%
+gameplay_layer = 5
+
+;===========================================================================================================
+;
+;-----Abandoned tracks------------------------
+;
+;=============================================
+
+[StyleLine]
+source_layer = 4_Abandoned_avp
+and not bridge = yes, viaduct, movable
+and not tunnel = yes
+pass2_texture = default/stripes_nn.png
+pass1_color = #99999900
+pass2_color = #111111ff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 16
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 4_Abandoned_avp
+and bridge = yes, viaduct, movable
+pass1_texture = default/white_bridge_ptt.png
+pass2_texture = default/stripes_nn.png
+pass1_color = #00ff00ff
+pass2_color = #111111ff
+pass1_half_stroke_phys_mm = 400
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 16
+pass2_half_stroke_px_dec = 16
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 4_Abandoned_avp
+and tunnel = yes
+pass1_texture = default/white_ptt.png
+pass2_texture = default/stripes_nn.png
+pass1_color = #0C7ACCff
+pass2_color = #111111ff
+pass1_half_stroke_phys_mm = 400
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 16
+pass2_half_stroke_px_dec = 16
+gameplay_layer = 5
+
+;===========================================================================================================
+;
+;-----Heritage tracks------------------------
+;
+;=============================================
+
+[StyleLine]
+source_layer = 5_Heritage_avp
+and railway = rail, narrow_gauge
+pass2_texture = default/dots_nn.png
+pass1_color = #99999900
+pass2_color = #FFDE03ff
+pass2_half_stroke_phys_mm = 800
+pass1_half_stroke_px_dec = 30
+pass2_half_stroke_px_dec = 16
+opacity = 9.9, 0%, 10, 100%
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 5_Heritage_avp
+and railway = tram
+pass2_texture = default/dots_nn.png
+pass1_color = #99999900
+pass2_color = #FFDE03ff
+pass2_half_stroke_phys_mm = 800
+pass1_half_stroke_px_dec = 30
+pass2_half_stroke_px_dec = 16
+opacity = 12.9, 0%, 13, 100%
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 5_Heritage_avp
+and railway = light_rail, subway, monorail, funicular
+pass2_texture = default/dots_nn.png
+pass1_color = #99999900
+pass2_color = #FFDE03ff
+pass2_half_stroke_phys_mm = 800
+pass1_half_stroke_px_dec = 30
+pass2_half_stroke_px_dec = 16
+opacity = 10.9, 0%, 11, 100%
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 5_Heritage_avp
+and railway = preserved
+pass2_texture = default/dots_nn.png
+pass1_color = #99999900
+pass2_color = #FFDE03ff
+pass2_half_stroke_phys_mm = 800
+pass1_half_stroke_px_dec = 30
+pass2_half_stroke_px_dec = 16
+opacity = 13.9, 0%, 14, 100%
+gameplay_layer = 5
+
+;===========================================================================================================
+;
+;-----Underground platforms------------------------
+;
+;=============================================
+
+[StyleMesh]
+source_layer = 6_Platforms_underground_avp
+;color = rgb(176, 180, 182)
+color = rgb(235, 221, 16)
+opacity = 14, 50%, 14, 50%
+texture = default/mesh_04.png
+
+;===========================================================================================================
+;
+;-----City supplements------------------------
+;
+;=============================================
+
+[StyleLine]
+source_layer = 7_Trolleybus_avp
+pass1_color = #99999900
+pass2_color = #00FEFFff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 16
+pass2_half_stroke_px_dec = 8
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 8_Metro_avp
+and railway = subway
+and not bridge = yes, viaduct, movable
+and not tunnel = yes
+pass1_color = #FFFFFF00
+pass2_color = #2921f2ff
+pass1_half_stroke_phys_mm = 400
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 16
+pass2_half_stroke_px_dec = 8
+opacity = 14, 100%, 14.1, 0%
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 8_Metro_avp
+and railway = subway
+and bridge = yes, viaduct, movable
+pass1_texture = default/white_bridge_ptt.png
+pass2_texture = default/white_ptt.png
+pass1_color = #00ff00ff
+pass1_half_stroke_phys_mm = 800
+pass2_color = #2921F2ff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 8
+opacity = 14, 100%, 14.1, 0%
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 8_Metro_avp
+and railway = subway
+and tunnel = yes
+pass1_texture = default/white_ptt.png
+pass2_texture = default/white_ptt.png
+pass1_color = #0C186Bff
+pass1_half_stroke_phys_mm = 1100
+pass2_color = #2921F2ff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 10
+pass2_half_stroke_px_dec = 4
+opacity = 14, 100%, 14.1, 0%
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 8_Metro_avp
+and railway = monorail
+and not bridge = yes, viaduct, movable
+and not tunnel = yes
+pass2_texture = default/white_ptt.png
+pass1_color = #99999900
+pass2_color = #880EECff
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 8
+opacity = 14, 100%, 14.1, 0%
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 8_Metro_avp
+and railway = monorail
+and bridge = yes, viaduct, movable
+pass1_texture = default/white_bridge_ptt.png
+pass2_texture = default/white_ptt.png
+pass1_color = #FFFF88ff
+pass1_half_stroke_phys_mm = 1200
+pass2_color = #880EECff
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 8
+opacity = 14, 100%, 14.1, 0%
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 8_Metro_avp
+and railway = monorail
+and tunnel = yes
+pass1_texture = default/white_ptt.png
+pass2_texture = default/white_ptt.png
+pass1_color = #0C186Bff
+pass1_half_stroke_phys_mm = 1200
+pass2_color = #880EECff
+pass2_half_stroke_phys_mm = 600
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 8
+opacity = 14, 100%, 14.1, 0%
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 9_Tram_avp
+and not bridge = yes, viaduct, movable
+and not tunnel = yes
+pass2_texture = default/white_ptt.png
+pass1_color = #99999900
+pass2_color = #FF01ACff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 16
+pass2_half_stroke_px_dec = 8
+opacity = 14, 100%, 14.1, 0%
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 9_Tram_avp
+and bridge = yes, viaduct, movable
+pass1_texture = default/white_bridge_ptt.png
+pass2_texture = default/white_ptt.png
+pass1_color = #00ff00ff
+pass1_half_stroke_phys_mm = 800
+pass2_color = #FF01ACff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 8
+opacity = 14, 100%, 14.1, 0%
+gameplay_layer = 5
+
+[StyleLine]
+source_layer = 9_Tram_avp
+and tunnel = yes
+pass1_texture = default/white_ptt.png
+pass2_texture = default/white_ptt.png
+pass1_color = #0C186Bff
+pass1_half_stroke_phys_mm = 1100
+pass2_color = #FF01ACff
+pass2_half_stroke_phys_mm = 400
+pass1_half_stroke_px_dec = 20
+pass2_half_stroke_px_dec = 8
+opacity = 14, 100%, 14.1, 0%
+gameplay_layer = 5
+
+
