@@ -4,7 +4,7 @@ schema_description: Rail supplements overlay - HSR, underground platforms, const
 sources:
   osm:
     type: osm
-    local_path: data/sources/eurasia.osm.pbf
+    local_path: data/sources/world.osm.pbf
 
 layers:
 
@@ -111,6 +111,22 @@ layers:
             - railway: proposed
             - construction: rail
             - proposed: rail
+            - construction:railway: __any__   # NEW: construction:railway=rail|light_rail|subway|…
+            - proposed:railway: __any__       # NEW: proposed:railway=*
+            # aerialway construction/proposed
+            - aerialway: construction
+            - aerialway: proposed
+            # cable/gondola/lift via construction= or proposed= primary key
+            - construction: cable_car
+            - construction: gondola
+            - construction: mixed_lift
+            - construction: chair_lift
+            - construction: funicular
+            - proposed: cable_car
+            - proposed: gondola
+            - proposed: mixed_lift
+            - proposed: chair_lift
+            - proposed: funicular        
         attributes:
           - key: railway
             tag_value: railway          # construction / proposed
@@ -118,10 +134,18 @@ layers:
             tag_value: highspeed          # construction / proposed
           - key: service
             tag_value: service          # yard / siding / spur / crossover
-          - key: construction
-            tag_value: construction
-          - key: proposed
-            tag_value: proposed
+          - key: construction                    # now coalesces bare + prefixed
+            coalesce:
+              - tag_value: construction
+              - tag_value: "construction:railway"
+          - key: proposed                         # now coalesces bare + prefixed
+            coalesce:
+              - tag_value: proposed
+              - tag_value: "proposed:railway"
+          - key: construction_railway      # NEW
+            tag_value: construction:railway
+          - key: proposed_railway          # NEW
+            tag_value: proposed:railway
           - key: usage
             tag_value: usage
           - key: bridge
@@ -132,7 +156,9 @@ layers:
             tag_value: layer
           - key: barrier
             tag_value: barrier
-
+          - key: aerialway
+            tag_value: aerialway      # distinguishes aerial from rail construction in styling
+            
   # ============================================================
   # 4. ABANDONED / FORMER RAIL
   # All lifecycle forms. Not in base map, carry bridge/tunnel.
@@ -151,7 +177,9 @@ layers:
             - abandoned:railway: __any__
             - razed:railway: __any__
             - was:railway: __any__
-            - historic: railway
+            - __all__:
+                - was:highway: __any__
+                - trolley_wire: yes
         attributes:
           - key: railway
             tag_value: railway
@@ -249,7 +277,12 @@ layers:
         geometry: line
         min_zoom: 13
         include_when:
-          trolley_wire: yes
+          __any__:
+            - trolley_wire: yes
+            - trolley_wire:forward: yes
+            - trolley_wire:backward: yes
+        exclude_when:
+          was:highway: __any__      # razed streets go to abandoned, not here
         attributes:
           - key: trolley_wire
             tag_value: trolley_wire
